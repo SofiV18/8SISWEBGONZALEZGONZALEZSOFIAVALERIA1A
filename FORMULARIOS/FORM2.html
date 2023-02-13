@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Comisiones y sueldo total</title>
+    <link rel="stylesheet" href="CSS/FORM2.css">
+</head>
+<body>
+
+	<h1>Calculo de comisiones y el sueldo total</h1>
+
+	<p>Sueldo base: <input type="text" id="sueldobase"></p>
+
+	<p>Venta 1: <input type="text" id="venta1"></p>
+	<p>Venta 2: <input type="text" id="venta2"></p>
+	<p>Venta 3: <input type="text" id="venta3"></p>
+
+	<button onclick="calcularComisiones()">Calcular comisiones y el sueldo total</button>
+
+	<p>Comisiones: <span id="comisiones"></span></p>
+	<p>Sueldo total: <span id="sueldototal"></span></p>
+
+	<script>
+		function calcularComisiones() {
+			var sueldoBase = parseFloat(document.getElementById("sueldobase").value);
+			var venta1 = parseFloat(document.getElementById("venta1").value);
+            var venta2 = parseFloat(document.getElementById("venta2").value);
+			var venta3 = parseFloat(document.getElementById("venta3").value);
+			
+			var comisiones = (venta1 + venta2 + venta3) * 0.10;
+			var sueldoTotal = sueldoBase + comisiones;
+			
+			document.getElementById("comisiones").innerHTML = comisiones;
+			document.getElementById("sueldoTotal").innerHTML = sueldoTotal;
+		}
+	</script>
+
+</body>
+
+</html>
